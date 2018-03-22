@@ -25,10 +25,8 @@ def log_error(e):
 	print(e)
 
 url=str(input('enter the url from where you wish to scrape'))
-#url='https://timesofindia.indiatimes.com/'
 raw_html=simple_get(url)
 html=BeautifulSoup(raw_html,'html.parser')
-#top_story=html.find_all('div',class_="media-heading headingfour")
-top_story=html.find_all(('span' or 'div'),class_=("desc" or "media-heading headingfour"))
-#items=top_story.find_all('a')
+top_story=html.find_all('span',class_="desc") or html.find_all('div',class_="media-heading headingfour")
+#currently works for "the times of india" and "hindustan times"
 print(top_story)
