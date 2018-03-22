@@ -28,5 +28,5 @@ url=str(input('enter the url from where you wish to scrape'))
 raw_html=simple_get(url)
 html=BeautifulSoup(raw_html,'html.parser')
 top_story=html.find_all('span',class_="desc") or html.find_all('div',class_="media-heading headingfour")
-#currently works for "the times of india" and "hindustan times"
+#currently works for "the times of india : url-https://timesofindia.indiatimes.com/news" and "hindustan times : url-https://www.hindustantimes.com/latest-news/"
 print(top_story)
